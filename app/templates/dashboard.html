@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MoneyMap - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <header>
+      <h1>MoneyMap</h1>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+          <li><a href="{{ url_for('add_expense') }}">Adicionar Gasto</a></li>
+          <li><a href="{{ url_for('logout') }}">Sair</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="resumo">
+        <h2>Resumo Financeiro</h2>
+        <div class="card">
+          <p>Gastos Totais: <span id="gastos-totais">R$ 0,00</span></p>
+          <p>Saldo Disponível: <span id="saldo-disponivel">R$ 0,00</span></p>
+        </div>
+      </section>
+
+      <section class="gastos">
+        <h2>Últimos Gastos</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Valor</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Exemplo de gasto -->
+            <tr>
+              <td>Supermercado</td>
+              <td>R$ 150,00</td>
+              <td>
+                <a href="#" class="btn-excluir">Excluir</a>
+              </td>
+            </tr>
+            <!-- Mais gastos serão adicionados dinamicamente -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 MoneyMap. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+  </body>
+</html>
